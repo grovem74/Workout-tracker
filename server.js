@@ -10,15 +10,16 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'html');
 
+
+// routes
+require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
+
+
 // Connect to database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Workout", { useNewUrlParser: true }, () => {
     console.log('connected to mongodb');
 });
-
-app.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/exercise.html"));
-});
-
 
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);

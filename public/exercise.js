@@ -95,7 +95,7 @@ function validateInputs() {
   }
 }
 
-async function handleFormSubmit(event) {
+async function handleFormSubmit(event) {console.log('submitting form');
   event.preventDefault();
 
   let workoutData = {};

@@ -5,7 +5,7 @@ Email: matthewg74@gmail.com<br>
      
 # Workout Tracker
 
-![Workout Tracker](/images/TeamTracker.gif)
+![Workout Tracker](/public/WorkoutTracker.gif)
 
 ![Project Status](https://img.shields.io/badge/status-in_progress-orange)&nbsp;     
 
@@ -24,7 +24,6 @@ This application requires the following NPM modules:
 
 * express
 * mongoose
-* mysql
 
 ### Usage
 The user enters workout details including name, type, weight, sets, reps, and duration of exercise.

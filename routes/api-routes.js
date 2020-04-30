@@ -35,10 +35,18 @@ module.exports = function (app) {
 
   app.get("/api/workouts", (req, res) => {
     Workout.find()
-      // .sort({ date: -1 })
       .then(dbWorkout => {
         res.json(dbWorkout);
-        // console.log('request', req);
+      })
+      .catch(err => {
+        res.status(400).json(err);
+      });
+  });
+
+  app.get("/api/workout/range", (req, res) => {
+    Workout.find()
+      .then(dbWorkout => {
+        res.json(dbWorkout);
       })
       .catch(err => {
         res.status(400).json(err);

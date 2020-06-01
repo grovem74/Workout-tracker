@@ -3,8 +3,8 @@ const Workout = require("../models/workout.js");
 
 module.exports = function (app) {
 
-  app.post("/api/workouts", ({ body }, res) => {
-    Workout.create(body)
+  app.get("/api/workouts", (req, res) => {
+    Workout.find()
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -23,8 +23,8 @@ module.exports = function (app) {
       });
   });
 
-  app.delete("/api/workouts/:id", ({ body }, res) => {
-    Workout.insertMany(body)
+  app.post("/api/workouts", ({ body }, res) => {
+    Workout.create(body)
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -32,25 +32,9 @@ module.exports = function (app) {
         res.status(400).json(err);
       });
   });
-
-  app.get("/api/workouts", (req, res) => {
-    Workout.find()
-      .then(dbWorkout => {
-        res.json(dbWorkout);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
-
+  
   app.get("/api/workout/range", (req, res) => {
-    Workout.find()
-      .then(dbWorkout => {
-        res.json(dbWorkout);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
+
   });
 
 };

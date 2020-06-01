@@ -17,7 +17,7 @@ require("./routes/html-routes")(app);
 
 
 // Connect to database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true }, () => {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:workout1@ds161144.mlab.com:61144/heroku_b3h1pvl1", { useNewUrlParser: true }, () => {
     console.log('connected to mongodb');
 });
 
